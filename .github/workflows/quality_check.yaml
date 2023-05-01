@@ -1,4 +1,4 @@
-name: Make sure my all is nice
+name: Quality assurance
 on:
   push:
 
