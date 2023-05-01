@@ -67,13 +67,6 @@ class _HomePageState extends State<HomePage> {
       final List<dynamic> results = data['results'] as List<dynamic>;
       _hasMorePages = data.isNotEmpty;
 
-      for (int i = 0; i < results.length; ++i) {
-        final Map<String, dynamic> result = results[i] as Map<String, dynamic>;
-        final Map<String, dynamic> urlResult =
-            result['urls'] as Map<String, dynamic>;
-        _hasMorePages = data.isNotEmpty;
-      }
-
       setState(() {
         _bikes.addAll(results
             .cast<Map<dynamic, dynamic>>()
@@ -90,7 +83,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SizedBox.expand(
         child: Column(
-          children: [
+          children: <Widget>[
             /// AppBar
             if (_isLoading && _page == 1)
               const Center(
@@ -103,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 7,
               child: Column(
-                children: [
+                children: <Widget>[
                   // const SizedBox(
                   //   height: 15,
                   // ),
