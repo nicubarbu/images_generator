@@ -1,5 +1,5 @@
-name: is_square_cube
-description: Checks if a number is square, cube, both or none.
+name: random_bikes_generator
+description: Project that generates images using Unsplash API
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,14 +9,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
   unsplash_client: ^2.1.0+3
   http: ^0.13.5
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.0
+
 
 dev_dependencies:
+  build_runner: ^2.3.3
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  freezed: ^2.3.2
+  flutter_lints: ^2.0.1
+  json_serializable: ^6.6.1
 
 
 flutter:
