@@ -7,12 +7,12 @@ environment:
   sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
+  cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.5
-  unsplash_client: ^2.1.0+3
-  http: ^0.13.5
   freezed_annotation: ^2.2.0
+  http: ^0.13.5
+  unsplash_client: ^2.1.0+3
   json_annotation: ^4.8.0
 
 
