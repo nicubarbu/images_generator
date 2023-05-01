@@ -8,9 +8,15 @@ part of 'picture.dart';
 
 _$Picture$ _$$Picture$FromJson(Map<String, dynamic> json) => _$Picture$(
       id: json['id'] as String,
-      createdAt: json['created_at'] == null ? null : DateTime.parse(json['created_at'] as String),
-      updatedAt: json['updated_at'] == null ? null : DateTime.parse(json['updated_at'] as String),
-      promotedAt: json['promoted_at'] == null ? null : DateTime.parse(json['promoted_at'] as String),
+      createdAt: json['created_at'] == null
+          ? null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
+          ? null
+          : DateTime.parse(json['updated_at'] as String),
+      promotedAt: json['promoted_at'] == null
+          ? null
+          : DateTime.parse(json['promoted_at'] as String),
       width: json['width'] as int,
       height: json['height'] as int,
       color: json['color'] as String,
@@ -23,7 +29,8 @@ _$Picture$ _$$Picture$FromJson(Map<String, dynamic> json) => _$Picture$(
       user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$Picture$ToJson(_$Picture$ instance) => <String, dynamic>{
+Map<String, dynamic> _$$Picture$ToJson(_$Picture$ instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),
@@ -73,7 +80,8 @@ _$User$ _$$User$FromJson(Map<String, dynamic> json) => _$User$(
       updatedAt: DateTime.parse(json['updated_at'] as String),
       username: json['username'] as String,
       name: json['name'] as String,
-      profileImages: UserProfileImages.fromJson(json['profile_image'] as Map<String, dynamic>),
+      profileImages: UserProfileImages.fromJson(
+          json['profile_image'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$User$ToJson(_$User$ instance) => <String, dynamic>{
@@ -84,13 +92,16 @@ Map<String, dynamic> _$$User$ToJson(_$User$ instance) => <String, dynamic>{
       'profile_image': instance.profileImages,
     };
 
-_$UserProfileImages$ _$$UserProfileImages$FromJson(Map<String, dynamic> json) => _$UserProfileImages$(
+_$UserProfileImages$ _$$UserProfileImages$FromJson(Map<String, dynamic> json) =>
+    _$UserProfileImages$(
       small: json['small'] as String,
       medium: json['medium'] as String,
       large: json['large'] as String,
     );
 
-Map<String, dynamic> _$$UserProfileImages$ToJson(_$UserProfileImages$ instance) => <String, dynamic>{
+Map<String, dynamic> _$$UserProfileImages$ToJson(
+        _$UserProfileImages$ instance) =>
+    <String, dynamic>{
       'small': instance.small,
       'medium': instance.medium,
       'large': instance.large,
