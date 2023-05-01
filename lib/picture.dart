@@ -23,8 +23,7 @@ class Picture with _$Picture {
     required User user,
   }) = Picture$;
 
-  factory Picture.fromJson(Map<dynamic, dynamic> json) =>
-      _$PictureFromJson(Map<String, dynamic>.from(json));
+  factory Picture.fromJson(Map<dynamic, dynamic> json) => _$PictureFromJson(Map<String, dynamic>.from(json));
 }
 
 @freezed
@@ -36,8 +35,7 @@ class Urls with _$Urls {
     @JsonKey(name: 'small_s3') required String smallS3,
   }) = Urls$;
 
-  factory Urls.fromJson(Map<dynamic, dynamic> json) =>
-      _$UrlsFromJson(Map<String, dynamic>.from(json));
+  factory Urls.fromJson(Map<dynamic, dynamic> json) => _$UrlsFromJson(Map<String, dynamic>.from(json));
 }
 
 @freezed
@@ -49,8 +47,7 @@ class Links with _$Links {
     @JsonKey(name: 'download_location') required String downloadLocation,
   }) = Links$;
 
-  factory Links.fromJson(Map<dynamic, dynamic> json) =>
-      _$LinksFromJson(Map<String, dynamic>.from(json));
+  factory Links.fromJson(Map<dynamic, dynamic> json) => _$LinksFromJson(Map<String, dynamic>.from(json));
 }
 
 @freezed
@@ -63,8 +60,7 @@ class User with _$User {
     @JsonKey(name: 'profile_image') required UserProfileImages profileImages,
   }) = User$;
 
-  factory User.fromJson(Map<dynamic, dynamic> json) =>
-      _$UserFromJson(Map<String, dynamic>.from(json));
+  factory User.fromJson(Map<dynamic, dynamic> json) => _$UserFromJson(Map<String, dynamic>.from(json));
 }
 
 @freezed

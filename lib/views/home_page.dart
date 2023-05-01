@@ -55,22 +55,19 @@ class _HomePageState extends State<HomePage> {
 
     const String apiKey = '1rEKHf3yqW2RoDbqVeYSFaEEGPqp9bFQYJhFZKZ8FBU';
     final String query = searchBarText ?? _textEditingController.text;
-    final String url =
-        'https://api.unsplash.com/search/photos/?query=$query&per_page=30';
+    final String url = 'https://api.unsplash.com/search/photos/?query=$query&per_page=30';
     final http.Client client = http.Client();
-    final http.Response response = await client.get(Uri.parse(url),
-        headers: <String, String>{'Authorization': 'Client-ID $apiKey'});
+    final http.Response response =
+        await client.get(Uri.parse(url), headers: <String, String>{'Authorization': 'Client-ID $apiKey'});
 
     if (response.statusCode == 200) {
-      final Map<String, dynamic> data =
-          jsonDecode(response.body) as Map<String, dynamic>;
+      final Map<String, dynamic> data = jsonDecode(response.body) as Map<String, dynamic>;
       final List<dynamic> results = data['results'] as List<dynamic>;
       _hasMorePages = data.isNotEmpty;
 
       setState(() {
-        _bikes.addAll(results
-            .cast<Map<dynamic, dynamic>>()
-            .map((Map<dynamic, dynamic> json) => Picture.fromJson(json)));
+        _bikes
+            .addAll(results.cast<Map<dynamic, dynamic>>().map((Map<dynamic, dynamic> json) => Picture.fromJson(json)));
         _isLoading = false;
       });
     }
@@ -112,18 +109,15 @@ class _HomePageState extends State<HomePage> {
                                 fit: StackFit.expand,
                                 children: <Widget>[
                                   GridTile(
-                                    child: Image.network(picture.urls.regular,
-                                        fit: BoxFit.cover),
+                                    child: Image.network(picture.urls.regular, fit: BoxFit.cover),
                                   ),
                                   Align(
                                     alignment: AlignmentDirectional.bottomEnd,
                                     child: Container(
                                       decoration: const BoxDecoration(
                                           gradient: LinearGradient(
-                                              begin: AlignmentDirectional
-                                                  .bottomCenter,
-                                              end: AlignmentDirectional
-                                                  .topCenter,
+                                              begin: AlignmentDirectional.bottomCenter,
+                                              end: AlignmentDirectional.topCenter,
                                               colors: <Color>[
                                             Colors.white54,
                                             Colors.transparent,
@@ -131,12 +125,10 @@ class _HomePageState extends State<HomePage> {
                                       child: ListTile(
                                         title: Text(
                                           picture.user.name,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.w600),
+                                          style: const TextStyle(fontWeight: FontWeight.w600),
                                         ),
                                         trailing: CircleAvatar(
-                                          backgroundImage: NetworkImage(picture
-                                              .user.profileImages.medium),
+                                          backgroundImage: NetworkImage(picture.user.profileImages.medium),
                                         ),
                                       ),
                                     ),
@@ -144,13 +136,11 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               );
                             },
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2, childAspectRatio: 0.69),
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2, childAspectRatio: 0.69),
                           )
                         : const Center(
-                            child: CircularProgressIndicator(
-                                semanticsLabel: 'Loading photos'),
+                            child: CircularProgressIndicator(semanticsLabel: 'Loading photos'),
                           ),
                   ),
                 ],
