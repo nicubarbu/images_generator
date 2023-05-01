@@ -1,17 +1,3 @@
-# Specify analysis options.
-#
-# For a list of lints, see: http://dart-lang.github.io/linter/lints/
-# See the configuration guide for more
-# https://github.com/dart-lang/sdk/tree/main/pkg/analyzer#configuring-the-analyzer
-#
-# There are other similar analysis options files in the flutter repos,
-# which should be kept in sync with this file:
-#
-#   - analysis_options.yaml (this file)
-#   - https://github.com/flutter/plugins/blob/master/analysis_options.yaml
-#   - https://github.com/flutter/engine/blob/master/analysis_options.yaml
-#   - https://github.com/flutter/packages/blob/master/analysis_options.yaml
-#
 # This file contains the analysis options used for code in the flutter/flutter
 # repository.
 
@@ -23,7 +9,10 @@ analyzer:
     # allow self-reference to deprecated members (we do this because otherwise we have
     # to annotate every member in every test, assert, etc, when we deprecate something)
     deprecated_member_use_from_same_package: ignore
+    invalid_annotation_target: ignore
   exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
     - "bin/cache/**"
     # Ignore protoc generated files
     - "dev/conductor/lib/proto/*"
@@ -200,7 +189,6 @@ linter:
     - unnecessary_constructor_name
     # - unnecessary_final # conflicts with prefer_final_locals
     - unnecessary_getters_setters
-    # - unnecessary_lambdas # has false positives: https://github.com/dart-lang/linter/issues/498
     - unnecessary_late
     - unnecessary_library_directive
     - unnecessary_new
