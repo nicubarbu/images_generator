@@ -8,4 +8,4 @@
 - functional search bar
 
 ## App UI:
-![Alt text](/screenshot.png?raw=true "Application screenshot")
+<img src="/screenshot.png" alt="Application screenshot" width="600" height="800">
