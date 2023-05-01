@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final List<String> _bikes = <String>[];
   final List<Picture> _bikes = <Picture>[];
   final TextEditingController _textEditingController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
@@ -25,9 +24,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    /// initiates the application with the 'freeride' theme
+    /// showing the results starting from the 1st page
     super.initState();
     _getImages(searchBarText: 'freeride', page: _page);
-    // _textEditingController.addListener(_onScroll);
+    /// _textEditingController.addListener(_onScroll);
     _scrollController.addListener(_onScroll);
   }
 
@@ -49,6 +50,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _setQuery(String newQuery) {
+    /// changes the query when a new one is searched in the text box
     setState(() {
       _query = newQuery;
       _page = 1;
@@ -58,13 +60,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _getImages({String? searchBarText, required int page}) async {
+    /// clears the current results and shows new rusults
+    /// based on the new query
     setState(() => _isLoading = true);
     if (page == 1 && searchBarText != 'freeride') {
       _bikes.clear();
     }
 
+    /// client authorization
     const String apiKey = '1rEKHf3yqW2RoDbqVeYSFaEEGPqp9bFQYJhFZKZ8FBU';
-    // final String query = searchBarText ?? _query ?? '';
     final String query = searchBarText ?? _query;
     final String url =
         'https://api.unsplash.com/search/photos/?query=$query&per_page=30';
@@ -72,6 +76,8 @@ class _HomePageState extends State<HomePage> {
     final http.Response response = await client.get(Uri.parse(url),
         headers: <String, String>{'Authorization': 'Client-ID $apiKey'});
 
+    /// 200 - ok
+    /// json [Map<String, dynamic>] => List
     if (response.statusCode == 200) {
       final Map<String, dynamic> data =
           jsonDecode(response.body) as Map<String, dynamic>;
