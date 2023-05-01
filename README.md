@@ -8,4 +8,4 @@
 - functional search bar
 
 ## App UI:
-<img src="/screenshot.png" alt="Application screenshot" width="600" height="800">
+<img src="/screenshot.png" alt="Application screenshot" width="642" height="1389">
