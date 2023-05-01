@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar({super.key, required this.size});
+  const MyAppBar(
+      {super.key,
+      required this.size,
+      required this.textEditingController,
+      required this.onSubmitted
+      });
+
   final Size size;
+  final TextEditingController textEditingController;
+  final Function(String) onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +23,8 @@ class MyAppBar extends StatelessWidget {
         height: size.height / 3.5,
         decoration: BoxDecoration(
           image: DecorationImage(
-            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.3), BlendMode.darken),
             image: const AssetImage('assets/images/biker.JPG'),
             fit: BoxFit.cover,
           ),
@@ -37,7 +46,13 @@ class MyAppBar extends StatelessWidget {
               width: double.infinity,
               height: 50,
               child: TextField(
-                readOnly: true,
+                controller: textEditingController,
+                textInputAction: TextInputAction.search,
+                // onSubmitted: (String value) {
+                //   Navigator.pop(context, value);
+                // },
+                onSubmitted: onSubmitted,
+                // readOnly: true,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: const Color.fromARGB(255, 228, 228, 228),
@@ -47,6 +62,11 @@ class MyAppBar extends StatelessWidget {
                     size: 20,
                     color: Color.fromARGB(255, 146, 146, 146),
                   ),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        textEditingController.clear();
+                      },
+                      icon: const Icon(Icons.clear)),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide.none,
@@ -59,8 +79,6 @@ class MyAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            // TextButton(onPressed: (){}, child: Text(''))
-            // to be implemented 1:28:00 (lecture 5)
           ],
         ),
       ),
