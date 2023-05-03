@@ -11,4 +11,4 @@
 - update UI (name, logo)
 
 ## App UI:
-<img src="/assets/images/app_screenshot.png" alt="Application screenshot" width="642" height="1389">
+<img src="/assets/showcase/app_screenshot.png" alt="Application screenshot" width="642" height="1389">
