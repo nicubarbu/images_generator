@@ -11,4 +11,5 @@
 - update UI (name, logo)
 
 ## App UI:
-<img src="/assets/showcase/app_screenshot.png" alt="Application screenshot" width="642" height="1389">
+
+https://user-images.githubusercontent.com/75511251/235907462-91b41a01-8963-4ae2-a85f-2547dc64cacd.mp4
