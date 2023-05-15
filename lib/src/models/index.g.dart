@@ -1,10 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'picture.dart';
+part of 'index.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+_$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
+      images: (json['images'] as List<dynamic>?)
+              ?.map((e) => Picture.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Picture>[],
+      isLoading: json['isLoading'] as bool? ?? false,
+      hasMore: json['hasMore'] as bool? ?? true,
+      searchTerm: json['searchTerm'] as String? ?? 'freeride',
+      page: json['page'] as int? ?? 1,
+    );
+
+Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) =>
+    <String, dynamic>{
+      'images': instance.images,
+      'isLoading': instance.isLoading,
+      'hasMore': instance.hasMore,
+      'searchTerm': instance.searchTerm,
+      'page': instance.page,
+    };
 
 _$Picture$ _$$Picture$FromJson(Map<String, dynamic> json) => _$Picture$(
       id: json['id'] as String,

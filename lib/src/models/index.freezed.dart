@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'picture.dart';
+part of 'index.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,6 +13,243 @@ T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+AppState _$AppStateFromJson(Map<String, dynamic> json) {
+  return AppState$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppState {
+  List<Picture> get images => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get hasMore => throw _privateConstructorUsedError;
+  String get searchTerm => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AppStateCopyWith<AppState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppStateCopyWith<$Res> {
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
+      _$AppStateCopyWithImpl<$Res, AppState>;
+  @useResult
+  $Res call(
+      {List<Picture> images,
+      bool isLoading,
+      bool hasMore,
+      String searchTerm,
+      int page});
+}
+
+/// @nodoc
+class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+    implements $AppStateCopyWith<$Res> {
+  _$AppStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+    Object? isLoading = null,
+    Object? hasMore = null,
+    Object? searchTerm = null,
+    Object? page = null,
+  }) {
+    return _then(_value.copyWith(
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<Picture>,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasMore: null == hasMore
+          ? _value.hasMore
+          : hasMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+      searchTerm: null == searchTerm
+          ? _value.searchTerm
+          : searchTerm // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$CopyWith(
+          _$AppState$ value, $Res Function(_$AppState$) then) =
+      __$$AppState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<Picture> images,
+      bool isLoading,
+      bool hasMore,
+      String searchTerm,
+      int page});
+}
+
+/// @nodoc
+class __$$AppState$CopyWithImpl<$Res>
+    extends _$AppStateCopyWithImpl<$Res, _$AppState$>
+    implements _$$AppState$CopyWith<$Res> {
+  __$$AppState$CopyWithImpl(
+      _$AppState$ _value, $Res Function(_$AppState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? images = null,
+    Object? isLoading = null,
+    Object? hasMore = null,
+    Object? searchTerm = null,
+    Object? page = null,
+  }) {
+    return _then(_$AppState$(
+      images: null == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<Picture>,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasMore: null == hasMore
+          ? _value.hasMore
+          : hasMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+      searchTerm: null == searchTerm
+          ? _value.searchTerm
+          : searchTerm // ignore: cast_nullable_to_non_nullable
+              as String,
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppState$ implements AppState$ {
+  const _$AppState$(
+      {final List<Picture> images = const <Picture>[],
+      this.isLoading = false,
+      this.hasMore = true,
+      this.searchTerm = 'freeride',
+      this.page = 1})
+      : _images = images;
+
+  factory _$AppState$.fromJson(Map<String, dynamic> json) =>
+      _$$AppState$FromJson(json);
+
+  final List<Picture> _images;
+  @override
+  @JsonKey()
+  List<Picture> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
+
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final bool hasMore;
+  @override
+  @JsonKey()
+  final String searchTerm;
+  @override
+  @JsonKey()
+  final int page;
+
+  @override
+  String toString() {
+    return 'AppState(images: $images, isLoading: $isLoading, hasMore: $hasMore, searchTerm: $searchTerm, page: $page)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AppState$ &&
+            const DeepCollectionEquality().equals(other._images, _images) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.hasMore, hasMore) || other.hasMore == hasMore) &&
+            (identical(other.searchTerm, searchTerm) ||
+                other.searchTerm == searchTerm) &&
+            (identical(other.page, page) || other.page == page));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_images),
+      isLoading,
+      hasMore,
+      searchTerm,
+      page);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
+      __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppState$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class AppState$ implements AppState {
+  const factory AppState$(
+      {final List<Picture> images,
+      final bool isLoading,
+      final bool hasMore,
+      final String searchTerm,
+      final int page}) = _$AppState$;
+
+  factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
+
+  @override
+  List<Picture> get images;
+  @override
+  bool get isLoading;
+  @override
+  bool get hasMore;
+  @override
+  String get searchTerm;
+  @override
+  int get page;
+  @override
+  @JsonKey(ignore: true)
+  _$$AppState$CopyWith<_$AppState$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 Picture _$PictureFromJson(Map<String, dynamic> json) {
   return Picture$.fromJson(json);

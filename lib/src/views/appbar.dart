@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  const MyAppBar(
-      {super.key,
-      required this.size,
-      required this.textEditingController,
-      required this.onSubmitted
-      });
+  const MyAppBar({super.key, required this.size, required this.textEditingController, required this.onSubmitted});
 
   final Size size;
   final TextEditingController textEditingController;
@@ -23,8 +18,7 @@ class MyAppBar extends StatelessWidget {
         height: size.height / 3.5,
         decoration: BoxDecoration(
           image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.3), BlendMode.darken),
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
             image: const AssetImage('assets/images/biker.JPG'),
             fit: BoxFit.cover,
           ),

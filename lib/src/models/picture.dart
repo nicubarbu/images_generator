@@ -1,8 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'picture.freezed.dart';
-
-part 'picture.g.dart';
+part of 'index.dart';
 
 @freezed
 class Picture with _$Picture {
