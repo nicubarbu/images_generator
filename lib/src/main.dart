@@ -17,9 +17,9 @@ void main() {
   final UnsplashApi api = UnsplashApi(client, apiKey);
   final AppEpics epic = AppEpics(api);
 
-  final Store<AppState> store = Store<AppState>(
-      reducer, initialState: const AppState(), middleware: <Middleware<AppState>>[
-        EpicMiddleware<AppState>(epic.call).call,
+  final Store<AppState> store =
+      Store<AppState>(reducer, initialState: const AppState(), middleware: <Middleware<AppState>>[
+    EpicMiddleware<AppState>(epic.call).call,
   ]);
 
   store.dispatch(GetImages.start(page: store.state.page, searchBarText: store.state.searchTerm));

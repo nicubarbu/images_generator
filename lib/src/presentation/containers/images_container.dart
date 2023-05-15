@@ -9,7 +9,7 @@ class ImagesContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, List<Picture>>(
       builder: builder,
-      converter: (Store<AppState> store)=>store.state.images,
+      converter: (Store<AppState> store) => store.state.images,
     );
   }
 }

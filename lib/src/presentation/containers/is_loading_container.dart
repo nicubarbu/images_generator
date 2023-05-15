@@ -9,7 +9,7 @@ class IsLoadingContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, bool>(
       builder: builder,
-      converter: (Store<AppState> store)=>store.state.isLoading,
+      converter: (Store<AppState> store) => store.state.isLoading,
     );
   }
 }
