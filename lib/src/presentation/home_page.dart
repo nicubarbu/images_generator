@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -78,7 +79,10 @@ class _HomePageState extends State<HomePage> {
                                   fit: StackFit.expand,
                                   children: <Widget>[
                                     GridTile(
-                                      child: Image.network(picture.urls.regular, fit: BoxFit.cover),
+                                      child: CachedNetworkImage(
+                                        imageUrl: picture.urls.regular,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                     Align(
                                       alignment: AlignmentDirectional.bottomEnd,
