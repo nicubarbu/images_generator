@@ -8,8 +8,9 @@ import 'actions/index.dart';
 import 'data/unsplash_api.dart';
 import 'epics/app_epics.dart';
 import 'models/index.dart';
-import 'reducer/app_reducer.dart';
 import 'presentation/home_page.dart';
+import 'presentation/picture_details.dart';
+import 'reducer/app_reducer.dart';
 
 void main() {
   const String apiKey = '1rEKHf3yqW2RoDbqVeYSFaEEGPqp9bFQYJhFZKZ8FBU';
@@ -36,10 +37,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: store,
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'Random Images Generator',
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        routes: <String, WidgetBuilder>{
+          '/': (BuildContext context) => const HomePage(),
+          '/details': (BuildContext context) => const PictureDetails(),
+        },
       ),
     );
   }

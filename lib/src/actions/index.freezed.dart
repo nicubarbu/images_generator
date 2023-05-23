@@ -501,6 +501,115 @@ abstract class GetImagesError implements GetImages {
 }
 
 /// @nodoc
+mixin _$SetSelectedImage {
+  String get pictureId => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetSelectedImageCopyWith<SetSelectedImage> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSelectedImageCopyWith<$Res> {
+  factory $SetSelectedImageCopyWith(SetSelectedImage value, $Res Function(SetSelectedImage) then) =
+      _$SetSelectedImageCopyWithImpl<$Res, SetSelectedImage>;
+  @useResult
+  $Res call({String pictureId});
+}
+
+/// @nodoc
+class _$SetSelectedImageCopyWithImpl<$Res, $Val extends SetSelectedImage> implements $SetSelectedImageCopyWith<$Res> {
+  _$SetSelectedImageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pictureId = null,
+  }) {
+    return _then(_value.copyWith(
+      pictureId: null == pictureId
+          ? _value.pictureId
+          : pictureId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetSelectedImage$CopyWith<$Res> implements $SetSelectedImageCopyWith<$Res> {
+  factory _$$SetSelectedImage$CopyWith(_$SetSelectedImage$ value, $Res Function(_$SetSelectedImage$) then) =
+      __$$SetSelectedImage$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pictureId});
+}
+
+/// @nodoc
+class __$$SetSelectedImage$CopyWithImpl<$Res> extends _$SetSelectedImageCopyWithImpl<$Res, _$SetSelectedImage$>
+    implements _$$SetSelectedImage$CopyWith<$Res> {
+  __$$SetSelectedImage$CopyWithImpl(_$SetSelectedImage$ _value, $Res Function(_$SetSelectedImage$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pictureId = null,
+  }) {
+    return _then(_$SetSelectedImage$(
+      null == pictureId
+          ? _value.pictureId
+          : pictureId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetSelectedImage$ implements SetSelectedImage$ {
+  const _$SetSelectedImage$(this.pictureId);
+
+  @override
+  final String pictureId;
+
+  @override
+  String toString() {
+    return 'SetSelectedImage(pictureId: $pictureId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSelectedImage$ &&
+            (identical(other.pictureId, pictureId) || other.pictureId == pictureId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pictureId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSelectedImage$CopyWith<_$SetSelectedImage$> get copyWith =>
+      __$$SetSelectedImage$CopyWithImpl<_$SetSelectedImage$>(this, _$identity);
+}
+
+abstract class SetSelectedImage$ implements SetSelectedImage {
+  const factory SetSelectedImage$(final String pictureId) = _$SetSelectedImage$;
+
+  @override
+  String get pictureId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetSelectedImage$CopyWith<_$SetSelectedImage$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UpdateQuery {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

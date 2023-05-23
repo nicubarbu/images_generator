@@ -8,6 +8,7 @@ class AppState with _$AppState {
     @Default(true) bool hasMore,
     @Default('freeride') String searchTerm,
     @Default(1) int page,
+    String? selectedPictureId,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

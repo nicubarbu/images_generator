@@ -75,40 +75,46 @@ class _HomePageState extends State<HomePage> {
                             delegate: SliverChildBuilderDelegate(
                               (BuildContext ctx, int index) {
                                 final Picture picture = images[index];
-                                return Stack(
-                                  fit: StackFit.expand,
-                                  children: <Widget>[
-                                    GridTile(
-                                      child: CachedNetworkImage(
-                                        imageUrl: picture.urls.regular,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional.bottomEnd,
-                                      child: Container(
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            begin: AlignmentDirectional.bottomCenter,
-                                            end: AlignmentDirectional.topCenter,
-                                            colors: <Color>[
-                                              Colors.white54,
-                                              Colors.transparent,
-                                            ],
-                                          ),
-                                        ),
-                                        child: ListTile(
-                                          title: Text(
-                                            picture.user.name,
-                                            style: const TextStyle(fontWeight: FontWeight.w600),
-                                          ),
-                                          trailing: CircleAvatar(
-                                            backgroundImage: NetworkImage(picture.user.profileImages.medium),
-                                          ),
+                                return GestureDetector(
+                                  onTap: () {
+                                    StoreProvider.of<AppState>(context).dispatch(SetSelectedImage(picture.id));
+                                    Navigator.pushNamed(context, '/details');
+                                  },
+                                  child: Stack(
+                                    fit: StackFit.expand,
+                                    children: <Widget>[
+                                      GridTile(
+                                        child: CachedNetworkImage(
+                                          imageUrl: picture.urls.regular,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      Align(
+                                        alignment: AlignmentDirectional.bottomEnd,
+                                        child: Container(
+                                          decoration: const BoxDecoration(
+                                            gradient: LinearGradient(
+                                              begin: AlignmentDirectional.bottomCenter,
+                                              end: AlignmentDirectional.topCenter,
+                                              colors: <Color>[
+                                                Colors.white54,
+                                                Colors.transparent,
+                                              ],
+                                            ),
+                                          ),
+                                          child: ListTile(
+                                            title: Text(
+                                              picture.user.name,
+                                              style: const TextStyle(fontWeight: FontWeight.w600),
+                                            ),
+                                            trailing: CircleAvatar(
+                                              backgroundImage: NetworkImage(picture.user.profileImages.medium),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 );
                               },
                               childCount: images.length,

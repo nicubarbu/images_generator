@@ -25,6 +25,7 @@ mixin _$AppState {
   bool get hasMore => throw _privateConstructorUsedError;
   String get searchTerm => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
+  String? get selectedPictureId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,8 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({List<Picture> images, bool isLoading, bool hasMore, String searchTerm, int page});
+  $Res call(
+      {List<Picture> images, bool isLoading, bool hasMore, String searchTerm, int page, String? selectedPictureId});
 }
 
 /// @nodoc
@@ -55,6 +57,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? hasMore = null,
     Object? searchTerm = null,
     Object? page = null,
+    Object? selectedPictureId = freezed,
   }) {
     return _then(_value.copyWith(
       images: null == images
@@ -77,6 +80,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      selectedPictureId: freezed == selectedPictureId
+          ? _value.selectedPictureId
+          : selectedPictureId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -86,7 +93,8 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Picture> images, bool isLoading, bool hasMore, String searchTerm, int page});
+  $Res call(
+      {List<Picture> images, bool isLoading, bool hasMore, String searchTerm, int page, String? selectedPictureId});
 }
 
 /// @nodoc
@@ -102,6 +110,7 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
     Object? hasMore = null,
     Object? searchTerm = null,
     Object? page = null,
+    Object? selectedPictureId = freezed,
   }) {
     return _then(_$AppState$(
       images: null == images
@@ -124,6 +133,10 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      selectedPictureId: freezed == selectedPictureId
+          ? _value.selectedPictureId
+          : selectedPictureId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -136,7 +149,8 @@ class _$AppState$ implements AppState$ {
       this.isLoading = false,
       this.hasMore = true,
       this.searchTerm = 'freeride',
-      this.page = 1})
+      this.page = 1,
+      this.selectedPictureId})
       : _images = images;
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
@@ -162,10 +176,12 @@ class _$AppState$ implements AppState$ {
   @override
   @JsonKey()
   final int page;
+  @override
+  final String? selectedPictureId;
 
   @override
   String toString() {
-    return 'AppState(images: $images, isLoading: $isLoading, hasMore: $hasMore, searchTerm: $searchTerm, page: $page)';
+    return 'AppState(images: $images, isLoading: $isLoading, hasMore: $hasMore, searchTerm: $searchTerm, page: $page, selectedPictureId: $selectedPictureId)';
   }
 
   @override
@@ -177,13 +193,14 @@ class _$AppState$ implements AppState$ {
             (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
             (identical(other.hasMore, hasMore) || other.hasMore == hasMore) &&
             (identical(other.searchTerm, searchTerm) || other.searchTerm == searchTerm) &&
-            (identical(other.page, page) || other.page == page));
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.selectedPictureId, selectedPictureId) || other.selectedPictureId == selectedPictureId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images), isLoading, hasMore, searchTerm, page);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_images), isLoading, hasMore,
+      searchTerm, page, selectedPictureId);
 
   @JsonKey(ignore: true)
   @override
@@ -204,7 +221,8 @@ abstract class AppState$ implements AppState {
       final bool isLoading,
       final bool hasMore,
       final String searchTerm,
-      final int page}) = _$AppState$;
+      final int page,
+      final String? selectedPictureId}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -218,6 +236,8 @@ abstract class AppState$ implements AppState {
   String get searchTerm;
   @override
   int get page;
+  @override
+  String? get selectedPictureId;
   @override
   @JsonKey(ignore: true)
   _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;
