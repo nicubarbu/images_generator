@@ -14,11 +14,12 @@ class PictureDetails extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text(picture.user.name),
+            backgroundColor: Colors.black,
           ),
           body: SizedBox.expand(
             child: CachedNetworkImage(
               imageUrl: picture.urls.regular,
-              fit: BoxFit.fill,
+              fit: BoxFit.fitHeight,
             ),
           ),
         );
