@@ -9,7 +9,7 @@ import 'data/unsplash_api.dart';
 import 'epics/app_epics.dart';
 import 'models/index.dart';
 import 'reducer/app_reducer.dart';
-import 'views/home_page.dart';
+import 'presentation/home_page.dart';
 
 void main() {
   const String apiKey = '1rEKHf3yqW2RoDbqVeYSFaEEGPqp9bFQYJhFZKZ8FBU';

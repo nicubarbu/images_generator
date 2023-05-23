@@ -64,11 +64,13 @@ mixin _$GetImages {
 
 /// @nodoc
 abstract class $GetImagesCopyWith<$Res> {
-  factory $GetImagesCopyWith(GetImages value, $Res Function(GetImages) then) = _$GetImagesCopyWithImpl<$Res, GetImages>;
+  factory $GetImagesCopyWith(GetImages value, $Res Function(GetImages) then) =
+      _$GetImagesCopyWithImpl<$Res, GetImages>;
 }
 
 /// @nodoc
-class _$GetImagesCopyWithImpl<$Res, $Val extends GetImages> implements $GetImagesCopyWith<$Res> {
+class _$GetImagesCopyWithImpl<$Res, $Val extends GetImages>
+    implements $GetImagesCopyWith<$Res> {
   _$GetImagesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -79,16 +81,20 @@ class _$GetImagesCopyWithImpl<$Res, $Val extends GetImages> implements $GetImage
 
 /// @nodoc
 abstract class _$$GetImagesStartCopyWith<$Res> {
-  factory _$$GetImagesStartCopyWith(_$GetImagesStart value, $Res Function(_$GetImagesStart) then) =
+  factory _$$GetImagesStartCopyWith(
+          _$GetImagesStart value, $Res Function(_$GetImagesStart) then) =
       __$$GetImagesStartCopyWithImpl<$Res>;
   @useResult
   $Res call({int page, String searchBarText});
 }
 
 /// @nodoc
-class __$$GetImagesStartCopyWithImpl<$Res> extends _$GetImagesCopyWithImpl<$Res, _$GetImagesStart>
+class __$$GetImagesStartCopyWithImpl<$Res>
+    extends _$GetImagesCopyWithImpl<$Res, _$GetImagesStart>
     implements _$$GetImagesStartCopyWith<$Res> {
-  __$$GetImagesStartCopyWithImpl(_$GetImagesStart _value, $Res Function(_$GetImagesStart) _then) : super(_value, _then);
+  __$$GetImagesStartCopyWithImpl(
+      _$GetImagesStart _value, $Res Function(_$GetImagesStart) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -130,7 +136,8 @@ class _$GetImagesStart implements GetImagesStart {
         (other.runtimeType == runtimeType &&
             other is _$GetImagesStart &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.searchBarText, searchBarText) || other.searchBarText == searchBarText));
+            (identical(other.searchBarText, searchBarText) ||
+                other.searchBarText == searchBarText));
   }
 
   @override
@@ -212,26 +219,32 @@ class _$GetImagesStart implements GetImagesStart {
 }
 
 abstract class GetImagesStart implements GetImages {
-  const factory GetImagesStart({required final int page, required final String searchBarText}) = _$GetImagesStart;
+  const factory GetImagesStart(
+      {required final int page,
+      required final String searchBarText}) = _$GetImagesStart;
 
   int get page;
   String get searchBarText;
   @JsonKey(ignore: true)
-  _$$GetImagesStartCopyWith<_$GetImagesStart> get copyWith => throw _privateConstructorUsedError;
+  _$$GetImagesStartCopyWith<_$GetImagesStart> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetImagesSuccessfulCopyWith<$Res> {
-  factory _$$GetImagesSuccessfulCopyWith(_$GetImagesSuccessful value, $Res Function(_$GetImagesSuccessful) then) =
+  factory _$$GetImagesSuccessfulCopyWith(_$GetImagesSuccessful value,
+          $Res Function(_$GetImagesSuccessful) then) =
       __$$GetImagesSuccessfulCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Picture> images});
 }
 
 /// @nodoc
-class __$$GetImagesSuccessfulCopyWithImpl<$Res> extends _$GetImagesCopyWithImpl<$Res, _$GetImagesSuccessful>
+class __$$GetImagesSuccessfulCopyWithImpl<$Res>
+    extends _$GetImagesCopyWithImpl<$Res, _$GetImagesSuccessful>
     implements _$$GetImagesSuccessfulCopyWith<$Res> {
-  __$$GetImagesSuccessfulCopyWithImpl(_$GetImagesSuccessful _value, $Res Function(_$GetImagesSuccessful) _then)
+  __$$GetImagesSuccessfulCopyWithImpl(
+      _$GetImagesSuccessful _value, $Res Function(_$GetImagesSuccessful) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -275,13 +288,15 @@ class _$GetImagesSuccessful implements GetImagesSuccessful {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetImagesSuccessfulCopyWith<_$GetImagesSuccessful> get copyWith =>
-      __$$GetImagesSuccessfulCopyWithImpl<_$GetImagesSuccessful>(this, _$identity);
+      __$$GetImagesSuccessfulCopyWithImpl<_$GetImagesSuccessful>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -353,25 +368,31 @@ class _$GetImagesSuccessful implements GetImagesSuccessful {
 }
 
 abstract class GetImagesSuccessful implements GetImages {
-  const factory GetImagesSuccessful(final List<Picture> images) = _$GetImagesSuccessful;
+  const factory GetImagesSuccessful(final List<Picture> images) =
+      _$GetImagesSuccessful;
 
   List<Picture> get images;
   @JsonKey(ignore: true)
-  _$$GetImagesSuccessfulCopyWith<_$GetImagesSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$GetImagesSuccessfulCopyWith<_$GetImagesSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetImagesErrorCopyWith<$Res> {
-  factory _$$GetImagesErrorCopyWith(_$GetImagesError value, $Res Function(_$GetImagesError) then) =
+  factory _$$GetImagesErrorCopyWith(
+          _$GetImagesError value, $Res Function(_$GetImagesError) then) =
       __$$GetImagesErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$GetImagesErrorCopyWithImpl<$Res> extends _$GetImagesCopyWithImpl<$Res, _$GetImagesError>
+class __$$GetImagesErrorCopyWithImpl<$Res>
+    extends _$GetImagesCopyWithImpl<$Res, _$GetImagesError>
     implements _$$GetImagesErrorCopyWith<$Res> {
-  __$$GetImagesErrorCopyWithImpl(_$GetImagesError _value, $Res Function(_$GetImagesError) _then) : super(_value, _then);
+  __$$GetImagesErrorCopyWithImpl(
+      _$GetImagesError _value, $Res Function(_$GetImagesError) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -410,11 +431,13 @@ class _$GetImagesError implements GetImagesError {
         (other.runtimeType == runtimeType &&
             other is _$GetImagesError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -492,10 +515,475 @@ class _$GetImagesError implements GetImagesError {
 }
 
 abstract class GetImagesError implements GetImages {
-  const factory GetImagesError(final Object error, final StackTrace stackTrace) = _$GetImagesError;
+  const factory GetImagesError(
+      final Object error, final StackTrace stackTrace) = _$GetImagesError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$GetImagesErrorCopyWith<_$GetImagesError> get copyWith => throw _privateConstructorUsedError;
+  _$$GetImagesErrorCopyWith<_$GetImagesError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$UpdateQuery {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String searchTerm) start,
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String searchTerm)? start,
+    TResult? Function()? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String searchTerm)? start,
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateQueryStart value) start,
+    required TResult Function(UpdateQuerySuccessful value) successful,
+    required TResult Function(UpdateQueryError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateQueryStart value)? start,
+    TResult? Function(UpdateQuerySuccessful value)? successful,
+    TResult? Function(UpdateQueryError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateQueryStart value)? start,
+    TResult Function(UpdateQuerySuccessful value)? successful,
+    TResult Function(UpdateQueryError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateQueryCopyWith<$Res> {
+  factory $UpdateQueryCopyWith(
+          UpdateQuery value, $Res Function(UpdateQuery) then) =
+      _$UpdateQueryCopyWithImpl<$Res, UpdateQuery>;
+}
+
+/// @nodoc
+class _$UpdateQueryCopyWithImpl<$Res, $Val extends UpdateQuery>
+    implements $UpdateQueryCopyWith<$Res> {
+  _$UpdateQueryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$UpdateQueryStartCopyWith<$Res> {
+  factory _$$UpdateQueryStartCopyWith(
+          _$UpdateQueryStart value, $Res Function(_$UpdateQueryStart) then) =
+      __$$UpdateQueryStartCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String searchTerm});
+}
+
+/// @nodoc
+class __$$UpdateQueryStartCopyWithImpl<$Res>
+    extends _$UpdateQueryCopyWithImpl<$Res, _$UpdateQueryStart>
+    implements _$$UpdateQueryStartCopyWith<$Res> {
+  __$$UpdateQueryStartCopyWithImpl(
+      _$UpdateQueryStart _value, $Res Function(_$UpdateQueryStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? searchTerm = null,
+  }) {
+    return _then(_$UpdateQueryStart(
+      searchTerm: null == searchTerm
+          ? _value.searchTerm
+          : searchTerm // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateQueryStart implements UpdateQueryStart {
+  const _$UpdateQueryStart({required this.searchTerm});
+
+  @override
+  final String searchTerm;
+
+  @override
+  String toString() {
+    return 'UpdateQuery.start(searchTerm: $searchTerm)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateQueryStart &&
+            (identical(other.searchTerm, searchTerm) ||
+                other.searchTerm == searchTerm));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, searchTerm);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateQueryStartCopyWith<_$UpdateQueryStart> get copyWith =>
+      __$$UpdateQueryStartCopyWithImpl<_$UpdateQueryStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String searchTerm) start,
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return start(searchTerm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String searchTerm)? start,
+    TResult? Function()? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return start?.call(searchTerm);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String searchTerm)? start,
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(searchTerm);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateQueryStart value) start,
+    required TResult Function(UpdateQuerySuccessful value) successful,
+    required TResult Function(UpdateQueryError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateQueryStart value)? start,
+    TResult? Function(UpdateQuerySuccessful value)? successful,
+    TResult? Function(UpdateQueryError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateQueryStart value)? start,
+    TResult Function(UpdateQuerySuccessful value)? successful,
+    TResult Function(UpdateQueryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateQueryStart implements UpdateQuery {
+  const factory UpdateQueryStart({required final String searchTerm}) =
+      _$UpdateQueryStart;
+
+  String get searchTerm;
+  @JsonKey(ignore: true)
+  _$$UpdateQueryStartCopyWith<_$UpdateQueryStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateQuerySuccessfulCopyWith<$Res> {
+  factory _$$UpdateQuerySuccessfulCopyWith(_$UpdateQuerySuccessful value,
+          $Res Function(_$UpdateQuerySuccessful) then) =
+      __$$UpdateQuerySuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateQuerySuccessfulCopyWithImpl<$Res>
+    extends _$UpdateQueryCopyWithImpl<$Res, _$UpdateQuerySuccessful>
+    implements _$$UpdateQuerySuccessfulCopyWith<$Res> {
+  __$$UpdateQuerySuccessfulCopyWithImpl(_$UpdateQuerySuccessful _value,
+      $Res Function(_$UpdateQuerySuccessful) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateQuerySuccessful implements UpdateQuerySuccessful {
+  const _$UpdateQuerySuccessful();
+
+  @override
+  String toString() {
+    return 'UpdateQuery.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateQuerySuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String searchTerm) start,
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String searchTerm)? start,
+    TResult? Function()? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return successful?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String searchTerm)? start,
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateQueryStart value) start,
+    required TResult Function(UpdateQuerySuccessful value) successful,
+    required TResult Function(UpdateQueryError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateQueryStart value)? start,
+    TResult? Function(UpdateQuerySuccessful value)? successful,
+    TResult? Function(UpdateQueryError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateQueryStart value)? start,
+    TResult Function(UpdateQuerySuccessful value)? successful,
+    TResult Function(UpdateQueryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateQuerySuccessful implements UpdateQuery {
+  const factory UpdateQuerySuccessful() = _$UpdateQuerySuccessful;
+}
+
+/// @nodoc
+abstract class _$$UpdateQueryErrorCopyWith<$Res> {
+  factory _$$UpdateQueryErrorCopyWith(
+          _$UpdateQueryError value, $Res Function(_$UpdateQueryError) then) =
+      __$$UpdateQueryErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class __$$UpdateQueryErrorCopyWithImpl<$Res>
+    extends _$UpdateQueryCopyWithImpl<$Res, _$UpdateQueryError>
+    implements _$$UpdateQueryErrorCopyWith<$Res> {
+  __$$UpdateQueryErrorCopyWithImpl(
+      _$UpdateQueryError _value, $Res Function(_$UpdateQueryError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+  }) {
+    return _then(_$UpdateQueryError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateQueryError implements UpdateQueryError {
+  const _$UpdateQueryError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'UpdateQuery.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateQueryError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateQueryErrorCopyWith<_$UpdateQueryError> get copyWith =>
+      __$$UpdateQueryErrorCopyWithImpl<_$UpdateQueryError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String searchTerm) start,
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String searchTerm)? start,
+    TResult? Function()? successful,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String searchTerm)? start,
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateQueryStart value) start,
+    required TResult Function(UpdateQuerySuccessful value) successful,
+    required TResult Function(UpdateQueryError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateQueryStart value)? start,
+    TResult? Function(UpdateQuerySuccessful value)? successful,
+    TResult? Function(UpdateQueryError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateQueryStart value)? start,
+    TResult Function(UpdateQuerySuccessful value)? successful,
+    TResult Function(UpdateQueryError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateQueryError implements UpdateQuery {
+  const factory UpdateQueryError(
+      final Object error, final StackTrace stackTrace) = _$UpdateQueryError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @JsonKey(ignore: true)
+  _$$UpdateQueryErrorCopyWith<_$UpdateQueryError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

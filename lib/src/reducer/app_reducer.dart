@@ -15,10 +15,15 @@ Reducer<AppState> _reducer = combineReducers(<Reducer<AppState>>[
   TypedReducer<AppState, GetImagesStart>(_getImagesStart).call,
   TypedReducer<AppState, GetImagesSuccessful>(_getImagesSuccessful).call,
   TypedReducer<AppState, GetImagesError>(_getImagesError).call,
+  TypedReducer<AppState, UpdateQueryStart>(_updateQueryStart).call,
 ]);
 
 AppState _getImagesStart(AppState state, GetImagesStart action) {
-  return state.copyWith(isLoading: true);
+  return state.copyWith(
+    isLoading: true,
+    searchTerm: action.searchBarText,
+    page: action.page,
+  );
 }
 
 AppState _getImagesSuccessful(AppState state, GetImagesSuccessful action) {
@@ -28,7 +33,10 @@ AppState _getImagesSuccessful(AppState state, GetImagesSuccessful action) {
   return state.copyWith(
     isLoading: false,
     hasMore: action.images.isNotEmpty,
-    images: <Picture>[if (state.page != 1) ...state.images, ...action.images],
+    images: <Picture>[
+      if (state.page != 1) ...state.images,
+      ...action.images,
+    ],
     page: state.page + 1,
   );
 }
@@ -41,4 +49,11 @@ AppState _getImagesError(AppState state, GetImagesError action) {
   //   searchTerm: state.searchTerm,
   //   page: state.page,
   return state.copyWith(isLoading: false);
+}
+
+AppState _updateQueryStart(AppState state, UpdateQueryStart action) {
+  return state.copyWith(
+    searchTerm: state.searchTerm,
+    page: 1,
+  );
 }
