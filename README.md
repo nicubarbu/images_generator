@@ -1,15 +1,13 @@
 # Image generator using the Unsplash API
 
 ## Implemented:
+- Redux state management
 - infinite scroll
 - results generator using **@freezed** annotation
-- functional search bar
-- search-type keyboard
-- clear text field
-
-## To do:
-- update UI (name, logo)
+- auto-search while typing search bar
+- clickable images
 
 ## App UI:
 
-https://user-images.githubusercontent.com/75511251/235907462-91b41a01-8963-4ae2-a85f-2547dc64cacd.mp4
+https://github.com/nicubarbu/random_images_unsplash_api/assets/75511251/138bc377-e4f6-4554-8519-21c4f9a95a3d
+
