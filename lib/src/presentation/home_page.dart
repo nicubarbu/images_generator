@@ -59,94 +59,93 @@ class _HomePageState extends State<HomePage> {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
-              } else {
-                return Column(
-                  children: <Widget>[
-                    MyAppBar(
-                      size: size,
-                      textEditingController: _textEditingController,
-                      onSubmitted: _setQuery,
-                    ),
-                    Expanded(
-                      child: CustomScrollView(
-                        controller: _scrollController,
-                        slivers: <Widget>[
-                          SliverGrid(
-                            delegate: SliverChildBuilderDelegate(
-                              (BuildContext ctx, int index) {
-                                final Picture picture = images[index];
-                                return GestureDetector(
-                                  onTap: () {
-                                    StoreProvider.of<AppState>(context).dispatch(SetSelectedImage(picture.id));
-                                    Navigator.pushNamed(context, '/details');
-                                  },
-                                  child: Stack(
-                                    fit: StackFit.expand,
-                                    children: <Widget>[
-                                      GridTile(
-                                        child: CachedNetworkImage(
-                                          imageUrl: picture.urls.regular,
-                                          fit: BoxFit.cover,
-                                        ),
+              }
+              return Column(
+                children: <Widget>[
+                  MyAppBar(
+                    size: size,
+                    textEditingController: _textEditingController,
+                    onSubmitted: _setQuery,
+                  ),
+                  Expanded(
+                    child: CustomScrollView(
+                      controller: _scrollController,
+                      slivers: <Widget>[
+                        SliverGrid(
+                          delegate: SliverChildBuilderDelegate(
+                            (BuildContext ctx, int index) {
+                              final Picture picture = images[index];
+                              return GestureDetector(
+                                onTap: () {
+                                  StoreProvider.of<AppState>(context).dispatch(SetSelectedImage(picture.id));
+                                  Navigator.pushNamed(context, '/details');
+                                },
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: <Widget>[
+                                    GridTile(
+                                      child: CachedNetworkImage(
+                                        imageUrl: picture.urls.regular,
+                                        fit: BoxFit.cover,
                                       ),
-                                      Align(
-                                        alignment: AlignmentDirectional.bottomEnd,
-                                        child: Container(
-                                          decoration: const BoxDecoration(
-                                            gradient: LinearGradient(
-                                              begin: AlignmentDirectional.bottomCenter,
-                                              end: AlignmentDirectional.topCenter,
-                                              colors: <Color>[
-                                                Colors.white54,
-                                                Colors.transparent,
-                                              ],
-                                            ),
-                                          ),
-                                          child: ListTile(
-                                            title: Text(
-                                              picture.user.name,
-                                              style: const TextStyle(fontWeight: FontWeight.w600),
-                                            ),
-                                            trailing: CircleAvatar(
-                                              backgroundImage: NetworkImage(picture.user.profileImages.medium),
-                                            ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional.bottomEnd,
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: AlignmentDirectional.bottomCenter,
+                                            end: AlignmentDirectional.topCenter,
+                                            colors: <Color>[
+                                              Colors.white54,
+                                              Colors.transparent,
+                                            ],
                                           ),
                                         ),
+                                        child: ListTile(
+                                          title: Text(
+                                            picture.user.name,
+                                            style: const TextStyle(fontWeight: FontWeight.w600),
+                                          ),
+                                          trailing: CircleAvatar(
+                                            backgroundImage: NetworkImage(picture.user.profileImages.medium),
+                                          ),
+                                        ),
                                       ),
-                                    ],
-                                  ),
-                                );
-                              },
-                              childCount: images.length,
-                            ),
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, childAspectRatio: 0.69),
-                          ),
-                          SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (BuildContext context, int index) {
-                                return ListTile(
-                                  title: Text('title: $index'),
-                                );
-                              },
-                              childCount: 10,
-                            ),
-                          ),
-                          if (isLoading)
-                            const SliverToBoxAdapter(
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(16.0),
-                                  child: CircularProgressIndicator(),
+                                    ),
+                                  ],
                                 ),
+                              );
+                            },
+                            childCount: images.length,
+                          ),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2, childAspectRatio: 0.69),
+                        ),
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (BuildContext context, int index) {
+                              return ListTile(
+                                title: Text('title: $index'),
+                              );
+                            },
+                            childCount: 10,
+                          ),
+                        ),
+                        if (isLoading)
+                          const SliverToBoxAdapter(
+                            child: Center(
+                              child: Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: CircularProgressIndicator(),
                               ),
                             ),
-                        ],
-                      ),
+                          ),
+                      ],
                     ),
-                  ],
-                );
-              }
+                  ),
+                ],
+              );
             },
           );
         },
